@@ -1,0 +1,13 @@
+Stock photographs used as stand-ins on the draft site. All from Unsplash (unsplash.com/license), free for commercial use.
+hero.jpg     Antonio Araujo                   https://unsplash.com/photos/a-large-indoor-swimming-pool-in-a-house-xX0MKVVhHR4
+travel.jpg   Priscilla Du Preez               https://unsplash.com/photos/K8XYGbw4Ahg
+car.jpg      Wesley Shen                      https://unsplash.com/photos/Vn8_HP2dh9s
+hotel.jpg    Dynamic Hong Kong                https://unsplash.com/photos/cYo7soegOa8
+meals.jpg    Kelly Visel                      https://unsplash.com/photos/zXn-amUiMJ4
+clinic.jpg   zhou xuan                        https://unsplash.com/photos/RVs_EQvImNE  (a stand-in building, not an LNS partner clinic)
+recover.jpg  Dogukan Sahin                    https://unsplash.com/photos/MAC8Ct5WqCM
+safety.jpg      Susanna Marsiglia      https://unsplash.com/photos/LWYxL7DzJt4  (the woman shown is a model, not an LNS client)
+care.jpg              Gricey Rangel Trejo  https://unsplash.com/photos/EdudAvbwF4Y  (Procedures page, top; Playas de Tijuana at sunset)
+trust.jpg             Priscilla Du Preez   https://unsplash.com/photos/Wxhsx3X10OA  (Procedures page, Honest advice section)
+ease.jpg              Rodrigo Rodrigues | WOLF A R T  https://unsplash.com/photos/g9ppKmYxtEo  (Safety page, top; the woman shown is a model, not an LNS client)
+Replace the clinic, hotel and car pictures with photographs of the real places before launch.

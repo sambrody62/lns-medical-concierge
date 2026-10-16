@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Request a consultation | LNS Medical Concierge</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Jost:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<div class="draft">Private draft. Text in [brackets] is a placeholder to replace before launch.</div>
+<script>document.documentElement.classList.add('js');</script>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="mark" href="index.html">LNS <span>International medical concierge</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="procedures.html">Procedures</a>
+      <a href="safety.html">Safety</a>
+      <a href="about.html">About</a>
+      <a class="btn btn-sm" href="consultation.html">Request a consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap form-grid">
+    <div class="stack">
+      <hr class="rule">
+      <h1>Request a private consultation.</h1>
+      <p class="lede">Tell us how to reach you. A founder will call to arrange a 20 to 30 minute conversation. We ask for no medical details here.</p>
+
+      <form id="consult-form" novalidate style="margin-top:1rem">
+        <div class="field">
+          <label for="full-name">Full name</label>
+          <input type="text" id="full-name" name="name" autocomplete="name">
+          <p class="error" id="full-name-error" hidden>Enter your name.</p>
+        </div>
+
+        <fieldset>
+          <legend>How should we reach you?</legend>
+          <div class="choices">
+            <label for="reach-phone"><input type="radio" id="reach-phone" name="reach" value="phone" checked> Phone</label>
+            <label for="reach-email"><input type="radio" id="reach-email" name="reach" value="email"> Email</label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="contact" id="contact-label">Phone number</label>
+          <input type="text" id="contact" name="contact" inputmode="tel" autocomplete="tel">
+          <p class="error" id="contact-error" hidden>Enter a phone number we can reach you on.</p>
+        </div>
+
+        <div class="field">
+          <label for="city">Where do you live?</label>
+          <select id="city" name="city">
+            <option>San Diego area</option>
+            <option>Los Angeles area</option>
+            <option>San Francisco Bay Area</option>
+            <option>Somewhere else</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="best-time">Best time to reach you</label>
+          <select id="best-time" name="time">
+            <option>Any time</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="interest">What are you considering? <span class="optional">(optional)</span></label>
+          <select id="interest" name="interest">
+            <option>I'd rather say on the call</option>
+            <option>Porcelain veneers, half or full set</option>
+            <option>Full-arch dental implants (All-on-4 or All-on-6)</option>
+            <option>Crowns, added to veneers or implants</option>
+            <option>Facelift</option>
+            <option>Rhinoplasty</option>
+            <option>Tummy tuck</option>
+            <option>Mommy makeover</option>
+            <option>Something else</option>
+          </select>
+        </div>
+
+        <div class="stack-sm">
+          <div><button type="submit" class="btn">Request a call</button></div>
+          <p class="small muted">We use these details only to contact you. [Privacy policy link: added before launch]</p>
+        </div>
+      </form>
+
+      <div class="result" id="result" tabindex="-1" hidden>
+        <h2 style="font-size:1.3rem">Preview only. Nothing was sent.</h2>
+        <p>This draft isn't connected to anything yet. On the live site, this is where the confirmation appears, naming who will call and by when.</p>
+        <div><button type="button" class="btn btn-sm" id="again">Back to the form</button></div>
+      </div>
+    </div>
+
+    <aside class="aside" aria-labelledby="next-title">
+      <h2 id="next-title" style="font-size:1.2rem;font-weight:500">What happens next</h2>
+      <ul class="marked marked-plain">
+        <li>A founder calls you at the time you chose.</li>
+        <li>You talk for 20 to 30 minutes. There is no obligation.</li>
+        <li>If you want to go further, we gather your health details privately afterwards, never through this page.</li>
+      </ul>
+      <div class="contact">
+        <h3>Or reach us directly</h3>
+        <dl class="proc-facts">
+          <dt>Phone</dt><dd>(206) 823-8170</dd>
+          <dt>Email</dt><dd>[Email address]</dd>
+        </dl>
+      </div>
+    </aside>
+  </div>
+</section>
+</main>
+<script>
+(function () {
+  var form = document.getElementById('consult-form');
+  var result = document.getElementById('result');
+  var nameEl = document.getElementById('full-name');
+  var contact = document.getElementById('contact');
+  var contactLabel = document.getElementById('contact-label');
+  var contactError = document.getElementById('contact-error');
+  var nameError = document.getElementById('full-name-error');
+
+  function method() {
+    return document.getElementById('reach-email').checked ? 'email' : 'phone';
+  }
+  function syncMethod() {
+    var email = method() === 'email';
+    contactLabel.textContent = email ? 'Email address' : 'Phone number';
+    contact.setAttribute('inputmode', email ? 'email' : 'tel');
+    contact.setAttribute('autocomplete', email ? 'email' : 'tel');
+    contactError.textContent = email ? 'Enter an email address we can reach you on.' : 'Enter a phone number we can reach you on.';
+    clear(contact, contactError);
+  }
+  function clear(input, error) {
+    input.removeAttribute('aria-invalid');
+    input.removeAttribute('aria-describedby');
+    error.hidden = true;
+  }
+  function flag(input, error) {
+    input.setAttribute('aria-invalid', 'true');
+    input.setAttribute('aria-describedby', error.id);
+    error.hidden = false;
+  }
+  function contactOk() {
+    var v = contact.value.trim();
+    if (method() === 'email') { return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v); }
+    return v.replace(/\D/g, '').length >= 10;
+  }
+
+  document.getElementById('reach-phone').addEventListener('change', syncMethod);
+  document.getElementById('reach-email').addEventListener('change', syncMethod);
+  nameEl.addEventListener('input', function () { clear(nameEl, nameError); });
+  contact.addEventListener('input', function () { clear(contact, contactError); });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var first = null;
+    if (!nameEl.value.trim()) { flag(nameEl, nameError); first = nameEl; }
+    if (!contactOk()) { flag(contact, contactError); first = first || contact; }
+    if (first) { first.focus(); return; }
+    form.hidden = true;
+    result.hidden = false;
+    result.focus();
+  });
+  document.getElementById('again').addEventListener('click', function () {
+    result.hidden = true;
+    form.hidden = false;
+    nameEl.focus();
+  });
+})();
+</script>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="procedures.html">Procedures</a>
+      <a href="safety.html">Safety</a>
+      <a href="about.html">About</a>
+      <a href="consultation.html">Request a consultation</a>
+    </nav>
+    <div class="foot-legal">
+      <p>LNS is not a medical provider. Medical care is provided by independent, licensed doctors, who are responsible for all medical advice and treatment.</p>
+      <p>California Seller of Travel registration [number, required before launch]. Registration as a seller of travel does not constitute approval by the State of California.</p>
+      <p>[Privacy policy and terms: added before launch]</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var btn = document.querySelector('.menu-btn'), nav = document.getElementById('site-nav');
+  if (btn && nav) {
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? 'Close' : 'Menu';
+    });
+  }
+  var bar = document.querySelector('.actionbar');
+  if (bar) {
+    var sync = function () { bar.classList.toggle('show', window.scrollY > 520); };
+    window.addEventListener('scroll', sync, { passive: true });
+    sync();
+  }
+})();
+</script>
+
+</body>
+</html>

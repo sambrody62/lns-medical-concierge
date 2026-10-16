@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About | LNS Medical Concierge</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Jost:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<div class="draft">Private draft. Text in [brackets] is a placeholder to replace before launch.</div>
+<script>document.documentElement.classList.add('js');</script>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="mark" href="index.html">LNS <span>International medical concierge</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="procedures.html">Procedures</a>
+      <a href="safety.html">Safety</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a class="btn btn-sm" href="consultation.html">Request a consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero hero-scene hero-about">
+  <div class="wrap">
+  <div class="hero-copy">
+    <hr class="rule">
+    <p class="eyebrow">About LNS</p>
+    <h1>A small firm, led by the two adventurers who look after you.</h1>
+    <p class="lede measure">We did the exploring so you don't have to: decades as travelers, sometimes as patients, and a walk through every clinic we work with. When you call, you reach one of us: no phone trees, no robots. Just two people here to help make medical care accessible again. And we stay happily fussy about the details so you never have to be.</p>
+  </div>
+  </div>
+</section>
+
+<section class="section section-mist founders-panel" aria-labelledby="people-title">
+  <div class="wrap">
+    <div class="section-head center">
+      <h2 id="people-title">Founders</h2>
+      <p class="muted measure">Lindsay Vrba and Sam Brody look after every client personally, from the first conversation until you are home.</p>
+    </div>
+    <div class="duo">
+      <div class="photo photo-duo monogram"><span class="monogram-mark" aria-hidden="true">L <i>&amp;</i> S</span><span class="monogram-note">[A photograph of Lindsay and Sam together]</span></div>
+      <div class="stack">
+        <div class="bio">
+          <h3>Lindsay Vrba</h3>
+          <p class="muted">Lindsay is the heart of LNS and the one at the helm. She builds the friendships behind every trip, with clients and doctors alike, and she has a gift for making a complicated journey feel easy.</p>
+        </div>
+        <div class="bio">
+          <h3>Sam Brody</h3>
+          <p class="muted">Sam is the other half of the idea and of the work. You will hear from him too: he is there for clients alongside Lindsay, backs her up at every step and keeps the technology that runs LNS working as it should.</p>
+        </div>
+      </div>
+    </div>
+    <p class="founders-close">We built LNS together, and we still do the most important part together: working as a team, getting to know the people on both sides of every trip, and taking on the heavy lifting. We happen to love it, which leaves nothing for you to carry.</p>
+  </div>
+</section>
+
+<section class="section section-deep stand" aria-labelledby="scope-title">
+  <div class="wrap">
+    <div class="section-head center">
+      <h2 id="scope-title">Where we stand</h2>
+    </div>
+    <div class="cols3">
+      <div><h3>Your doctor leads the care</h3><p class="muted">Every medical decision is made by your licensed doctor, with you.</p></div>
+      <div><h3>An honest picture</h3><p class="muted">Your doctor gives you an honest picture of what to expect.</p></div>
+      <div><h3>We work for you</h3><p class="muted">We are paid by you, never by the doctor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-snug" aria-labelledby="company-title">
+  <div class="wrap">
+    <div class="know-card company-card">
+      <h2 id="company-title">Company details</h2>
+      <dl class="facts facts-wide">
+        <div><dt>Registered name</dt><dd>[Company name and state of registration]</dd></div>
+        <div><dt>Telephone</dt><dd>(206) 823-8170</dd></div>
+        <div><dt>Email</dt><dd>[Email address]</dd></div>
+        <div><dt>Seller of Travel</dt><dd>California registration [number, required before launch]</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="band" aria-labelledby="band-title">
+  <div class="wrap band-row">
+    <div class="stack-sm">
+      <h2 id="band-title">Start with a conversation.</h2>
+      <p>Twenty to thirty minutes with a founder. No obligation.</p>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-light" href="consultation.html">Request a private consultation</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="procedures.html">Procedures</a>
+      <a href="safety.html">Safety</a>
+      <a href="about.html">About</a>
+      <a href="consultation.html">Request a consultation</a>
+    </nav>
+    <div class="foot-legal">
+      <p>LNS is not a medical provider. Medical care is provided by independent, licensed doctors, who are responsible for all medical advice and treatment.</p>
+      <p>California Seller of Travel registration [number, required before launch]. Registration as a seller of travel does not constitute approval by the State of California.</p>
+      <p>[Privacy policy and terms: added before launch]</p>
+    </div>
+  </div>
+</footer>
+
+<div class="actionbar"><a class="btn" href="consultation.html">Request a private consultation</a></div>
+<script>
+(function () {
+  var btn = document.querySelector('.menu-btn'), nav = document.getElementById('site-nav');
+  if (btn && nav) {
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? 'Close' : 'Menu';
+    });
+  }
+  var bar = document.querySelector('.actionbar');
+  if (bar) {
+    var sync = function () { bar.classList.toggle('show', window.scrollY > 520); };
+    window.addEventListener('scroll', sync, { passive: true });
+    sync();
+  }
+})();
+</script>
+
+</body>
+</html>
